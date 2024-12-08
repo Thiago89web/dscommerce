@@ -13,7 +13,7 @@ export default function LoggedUser() {
     }
 
     return (
-        /*contextTokenPayload && authService.isAuthenticated()
+        contextTokenPayload && authService.isAuthenticated()
             ? (
                 <div className="dsc-logged-user">
                     <p>{contextTokenPayload.user_name}</p>
@@ -24,6 +24,6 @@ export default function LoggedUser() {
                 <Link to="/login">
                     Entrar
                 </Link>
-            )*/
+            )
     );
 }
