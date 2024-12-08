@@ -6,6 +6,7 @@ import { CredentialsDTO } from "../../../models/auth";
 import { ContextToken } from "../../../utils/context-token";
 
 export default function Login() {
+    
     const { setContextTokenPayload } = useContext(ContextToken);
 
     const navigate = useNavigate();
@@ -20,8 +21,8 @@ export default function Login() {
         authService.loginRequest(formData)
             .then(response => {
                 authService.saveAccessToken(response.data.access_token);
-                //setContextTokenPayload(authService.getAccessTokenPayload());
-                //navigate("/cart");
+                setContextTokenPayload(authService.getAccessTokenPayload());
+                navigate("/cart");
             })
             .catch(error => {
                 console.log("Erro no login", error);

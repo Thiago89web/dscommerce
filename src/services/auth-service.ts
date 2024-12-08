@@ -1,10 +1,10 @@
 import { AxiosRequestConfig } from "axios";
 import QueryString from "qs";
-import { CredentialsDTO } from "../models/auth";
+import { AccessTokenPayloadDTO, CredentialsDTO, RoleEnum } from "../models/auth";
 import { requestBackend } from "../utils/requests";
 import { CLIENT_ID, CLIENT_SECRET } from "../utils/system";
 import * as accessTokenRepository from "../localstorage/access-token-repository";
-//import jwtDecode from "jwt-decode";
+import jwtDecode from "jwt-decode";
 
 export function loginRequest(loginData: CredentialsDTO) {
   const headers = {
@@ -39,7 +39,7 @@ export function getAccessToken() {
   return accessTokenRepository.get();
 }
 
-/*export function getAccessTokenPayload(): AccessTokenPayloadDTO | undefined {
+export function getAccessTokenPayload(): AccessTokenPayloadDTO | undefined {
   try {
     const token = accessTokenRepository.get();
     return token == null
@@ -74,4 +74,4 @@ export function hasAnyRoles(roles: RoleEnum[]): boolean {
     //return roles.some(role => tokenData.authorities.includes(role));
   }
   return false;
-}*/
+}
