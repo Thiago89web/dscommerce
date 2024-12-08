@@ -16,16 +16,16 @@ export default function Login() {
     })
 
     function handleSubmit(event: any) {
-       /* event.preventDefault();
+        event.preventDefault();
         authService.loginRequest(formData)
             .then(response => {
                 authService.saveAccessToken(response.data.access_token);
-                setContextTokenPayload(authService.getAccessTokenPayload());
-                navigate("/cart");
+                //setContextTokenPayload(authService.getAccessTokenPayload());
+                //navigate("/cart");
             })
             .catch(error => {
                 console.log("Erro no login", error);
-            })*/
+            })
     }
 
     function handleInputChange(event: any) {
