@@ -1,8 +1,14 @@
+import { useNavigate, useParams } from 'react-router-dom';
 import './styles.css';
+import { useEffect, useState } from 'react';
+import { CategoryDTO } from '../../../models/category';
+import * as forms from '../../../utils/forms';
+import * as productService from '../../../services/product-service';
+import * as categoryService from '../../../services/category-service';
 
 export default function ProductForm() {
 
-    /*const params = useParams();
+    const params = useParams();
 
     const navigate = useNavigate();
 
@@ -114,7 +120,7 @@ export default function ProductForm() {
                 const newInputs = forms.setBackendErrors(formData, error.response.data.errors);
                 setFormData(newInputs);
             });
-    }*/
+    }
 
     return (
         <h1>Cadastro de Produtos</h1>

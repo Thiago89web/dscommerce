@@ -1,14 +1,23 @@
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
+import { useEffect, useState } from 'react';
+import { ProductDTO } from '../../../models/product';
+import * as productService from '../../../services/product-service';
+import ButtonInverse from '../../../components/ButtonInverse';
+import SearchBar from '../../../components/SearchBar';
+import ButtonNextPage from '../../../components/ButtonNextPage';
+import editIcon from '../../../assets/edit.svg';
+import deleteIcon from '../../../assets/delete.svg';
 
 
-/*type QueryParams = {
+type QueryParams = {
     page: number;
     name: string;
-}*/
+}
 
 export default function ProductListing() {
 
-    /*const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const [dialogInfoData, setDialogInfoData] = useState({
         visible: false,
@@ -80,11 +89,10 @@ export default function ProductListing() {
         }
 
         setDialogConfirmationData({ ...dialogConfirmationData, visible: false });
-    }*/
+    }
 
     return (
-        <h1>Lista de Produtos</h1>
-        /*<main>
+        <main>
             <section id="product-listing-section" className="dsc-container">
                 <h2 className="dsc-section-title dsc-mb20">Cadastro de produtos</h2>
 
@@ -130,21 +138,23 @@ export default function ProductListing() {
             </section>
 
             {
-                dialogInfoData.visible &&
+               /* dialogInfoData.visible &&
                 <DialogInfo
                     message={dialogInfoData.message}
                     onDialogClose={handleDialogInfoClose}
-                />
+                />*/
             }
 
             {
-                dialogConfirmationData.visible &&
+               /* dialogConfirmationData.visible &&
                 <DialogConfirmation
                     id={dialogConfirmationData.id}
                     message={dialogConfirmationData.message}
                     onDialogAnswer={handleDialogConfirmationAnswer}
-                />
+                />*/
             }
-        </main>*/
+        </main>
+
+        
     );
 }
