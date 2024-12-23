@@ -1,10 +1,14 @@
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { CategoryDTO } from '../../../models/category';
 import * as forms from '../../../utils/forms';
 import * as productService from '../../../services/product-service';
 import * as categoryService from '../../../services/category-service';
+import FormInput from '../../../components/FormInput';
+import FormSelect from '../../../components/FormSelect';
+import FormTextArea from '../../../components/FormTextArea';
+import { selectStyles } from '../../../utils/select';
 
 export default function ProductForm() {
 
@@ -123,8 +127,7 @@ export default function ProductForm() {
     }
 
     return (
-        <h1>Cadastro de Produtos</h1>
-        /*<main>
+        <main>
             <section id="product-form-section" className="dsc-container">
                 <div className="dsc-product-form-container">
                     <form className="dsc-card dsc-form" onSubmit={handleSubmit}>
@@ -193,6 +196,6 @@ export default function ProductForm() {
                     </form>
                 </div>
             </section>
-        </main>*/
+        </main>
     );
 }

@@ -8,6 +8,8 @@ import SearchBar from '../../../components/SearchBar';
 import ButtonNextPage from '../../../components/ButtonNextPage';
 import editIcon from '../../../assets/edit.svg';
 import deleteIcon from '../../../assets/delete.svg';
+import DialogInfo from '../../../components/DialogInfo';
+import DialogConfirmation from '../../../components/DialogConfirmation';
 
 
 type QueryParams = {
@@ -138,20 +140,20 @@ export default function ProductListing() {
             </section>
 
             {
-               /* dialogInfoData.visible &&
+                dialogInfoData.visible &&
                 <DialogInfo
                     message={dialogInfoData.message}
                     onDialogClose={handleDialogInfoClose}
-                />*/
+                />
             }
 
             {
-               /* dialogConfirmationData.visible &&
+                dialogConfirmationData.visible &&
                 <DialogConfirmation
                     id={dialogConfirmationData.id}
                     message={dialogConfirmationData.message}
                     onDialogAnswer={handleDialogConfirmationAnswer}
-                />*/
+                />
             }
         </main>
 
